@@ -1,0 +1,36 @@
+http:
+  port: 80
+admin:
+  port: 9876
+  host: localhost
+apiEndpoints:
+  hypnos:
+    host: api.localhost
+    paths: ['/hypnos', '/hypnos/*']
+  master:
+    host: api.localhost
+    paths: ['/master', '/master/*']
+serviceEndpoints:
+  hypnosService:
+    url: 'http://hypnos:3010'
+  masterService:
+    url: 'http://master:3001'
+policies:
+  - proxy
+pipelines:
+  hypnosPipeline:
+    apiEndpoints:
+      - hypnos
+    policies:
+      - proxy:
+        - action:
+            serviceEndpoint: hypnosService
+            stripPath: true
+  masterPipeline:
+    apiEndpoints:
+      - master
+    policies:
+      - proxy:
+        - action:
+            serviceEndpoint: masterService
+            stripPath: true

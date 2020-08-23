@@ -1,0 +1,14 @@
+{
+  "name": "gateway-api",
+  "description": "Coder Mind's gateway api",
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/coder-mind-project/gateway-api.git"
+  },
+  "license": "BSD 3-Clause",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "express-gateway": "^1.16.10"
+  }
+}
