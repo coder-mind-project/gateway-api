@@ -1,3 +1,5 @@
+> This project is no longer maintained and will no longer be updated.
+
 # Gateway API
 
 #### API proxy from Coder Mind's APIs
